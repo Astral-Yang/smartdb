@@ -211,6 +211,11 @@ class UserDao2 {
  this.message = `${JSON.stringify(result)}`
 ```
 
+## 8 删除数据库
+deleteBackupDb(context: Context) {
+  sql.getDbHelper("backup").deleteDb(context, "backup.db")
+}
+
 ## 开源协议
 
 本项目基于 [Apache License 2.0](https://github.com/liushengyi/smartdb/blob/master/library/LICENSE) ，请自由地享受和参与开源。
