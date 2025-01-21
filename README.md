@@ -114,6 +114,10 @@ class AppDB {
     //配置RdbStore属性
     //sql.dbHelper.initDbWithConfig
   }
+
+  deleteBackupDb(context: Context) {
+    sql.getDbHelper("test").deleteDb(context, "test.db")
+  }
 }
 
 class AppDbOpenHelper extends sql.DbOpenHelper {
@@ -210,11 +214,6 @@ class UserDao2 {
  let result = await userDao.searchUser("name like 'id%'")
  this.message = `${JSON.stringify(result)}`
 ```
-
-## 8 删除数据库
-deleteBackupDb(context: Context) {
-  sql.getDbHelper("backup").deleteDb(context, "backup.db")
-}
 
 ## 开源协议
 
